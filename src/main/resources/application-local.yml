@@ -1,0 +1,13 @@
+# Profil do pracy na komputerze dewelopera z bazą z compose.yaml.
+# Wartości domyślne pasują do compose.yaml; można je nadpisać zmiennymi środowiskowymi.
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:football_engine}
+    username: ${DB_USERNAME:football_engine}
+    password: ${DB_PASSWORD:football_engine}
+
+management:
+  endpoint:
+    health:
+      # Lokalnie pokazujemy szczegóły (np. stan bazy), żeby łatwo diagnozować problemy.
+      show-details: always

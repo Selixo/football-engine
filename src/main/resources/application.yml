@@ -1,0 +1,23 @@
+# Konfiguracja wspólna dla wszystkich środowisk.
+# Dane dostępowe do bazy NIE są tutaj: dostarcza je profil (local, test) lub zmienne środowiskowe.
+spring:
+  application:
+    name: football-engine
+  jpa:
+    # Brak zapytań do bazy w warstwie widoku: transakcja kończy się w serwisie.
+    open-in-view: false
+    hibernate:
+      # Hibernate nigdy nie zmienia schematu bazy. Schemat będzie zarządzany migracjami.
+      ddl-auto: validate
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # Publicznie wystawiamy tylko health. Pozostałe endpointy Actuatora dodamy świadomie.
+        include: health
+  endpoint:
+    health:
+      probes:
+        # /actuator/health/liveness i /actuator/health/readiness (Docker, Kubernetes)
+        enabled: true

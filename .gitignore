@@ -1,0 +1,30 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.properties
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse / VS Code
+.classpath
+.project
+.settings/
+.vscode/
+bin/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Logi
+*.log
+logs/
+
+# Lokalne zmienne środowiskowe (mogą zawierać sekrety)
+.env
+.env.*
+!.env.example

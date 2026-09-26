@@ -1,0 +1,6 @@
+# Profil testowy. Połączenie z bazą dostarcza kontener PostgreSQL (Testcontainers),
+# więc nie ma tu adresu ani danych dostępowych.
+management:
+  endpoint:
+    health:
+      show-details: always
